@@ -10,6 +10,30 @@ export const coffees = [
     price: "9.90",
   },
   {
+    id: 1,
+    img: Assets.coffee,
+    title: "Expresso Tradicional",
+    type: [{ id: 1, name: "TRADICIONAL" }],
+    description: "O tradicional café feito com água quente e grãos moídos",
+    price: "9.90",
+  },
+  {
+    id: 1,
+    img: Assets.coffee,
+    title: "Expresso Tradicional",
+    type: [{ id: 1, name: "TRADICIONAL" }],
+    description: "O tradicional café feito com água quente e grãos moídos",
+    price: "9.90",
+  },
+  {
+    id: 1,
+    img: Assets.coffee,
+    title: "Expresso Tradicional",
+    type: [{ id: 1, name: "TRADICIONAL" }],
+    description: "O tradicional café feito com água quente e grãos moídos",
+    price: "9.90",
+  },
+  {
     id: 2,
     img: Assets.coffeeAmericano,
     title: "Expresso Americano",
@@ -39,5 +63,7 @@ export const coffees = [
 export const listCoffee = [
   { id: 1, quant: 2 },
   { id: 2, quant: 1 },
+  { id: 3, quant: 4 },
+  { id: 3, quant: 4 },
   { id: 3, quant: 4 },
 ];

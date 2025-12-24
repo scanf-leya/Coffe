@@ -1,14 +1,16 @@
 import { Outlet } from "react-router";
 import { Header } from "../../components/header";
-import {LayoutRouterContainer } from "./styled";
+import { LayoutRouter, LayoutRouterContainer } from "./styled";
 
 export function DefaultLayout() {
   return (
     <>
       <Header />
-      <LayoutRouterContainer>
-        <Outlet />
-      </LayoutRouterContainer>
+      <LayoutRouter>
+        <LayoutRouterContainer>
+          <Outlet />
+        </LayoutRouterContainer>
+      </LayoutRouter>
     </>
   );
 }

@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components"
+import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
     * {
@@ -14,9 +14,9 @@ export const GlobalStyle = createGlobalStyle`
 
     body {
         background-color: ${(props) => props.theme.background};
-        color:${(props)=>props.theme["base-text"]};
+        color:${(props) => props.theme["base-text"]};
         -webkit-font-smoothing: antialiased;
-
+overflow: hidden;
         font-family: 'Roboto', sans-serif;
         font-weight: 400;
         font-size: 1rem;
