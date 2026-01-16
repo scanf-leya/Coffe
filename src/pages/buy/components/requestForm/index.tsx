@@ -14,8 +14,6 @@ import {
   Payment,
   TodoList,
   CheckboxContainer,
-  HiddenCheckbox,
-  LabelText,
   Location,
   Request,
 } from "./styled";
@@ -29,97 +27,105 @@ export function RequestForm() {
     <RequestContainer>
       <h2>Complete o seu Pedido</h2>
       <Request>
-          <Location>
-            <TextContext>
-              <MapPinLineIcon size={22} color={defaultTheme["yellow-dark"]} />
-              <div>
-                <span>Endereco de Entrega</span>
-                <span>Informe o indereco onde deseja receber o seu pedido</span>
-              </div>
-            </TextContext>
-            <InputList>
+        <Location>
+          <TextContext>
+            <MapPinLineIcon size={22} color={defaultTheme["yellow-dark"]} />
+            <div>
+              <span>Endereço de Entrega</span>
+              <span>Informe o indereço onde deseja receber o seu pedido</span>
+            </div>
+          </TextContext>
+          <InputList>
+            <input
+              className="item1"
+              type="text"
+              placeholder="BI"
+              {...register("bi")}
+            />
+            <input
+              className="item2"
+              type="text"
+              placeholder="Rua"
+              {...register("rua")}
+            />
+            <input
+              className="item3a"
+              type="text"
+              placeholder="Numero da casa"
+              {...register("Ncasa")}
+            />
+            <input
+              className="item3b"
+              type="text"
+              placeholder="Complemento"
+              {...register("compl")}
+            />
+            <input
+              className="item4a"
+              type="text"
+              placeholder="Bairro"
+              {...register("bairro")}
+            />
+            <input
+              className="item4b"
+              type="text"
+              placeholder="cidade"
+              {...register("cidade")}
+            />
+            <input
+              className="item4c"
+              type="text"
+              placeholder="QT"
+              {...register("qt")}
+            />
+          </InputList>
+        </Location>
+        <Payment>
+          <TextContext>
+            <CurrencyDollarIcon size={22} color={defaultTheme.purple} />
+            <div>
+              <span>Pagamento</span>
+              <span>
+                O pagamento e feito na Entrega, Escolha a forma que deseja pagar
+              </span>
+            </div>
+          </TextContext>
+          <TodoList>
+            <CheckboxContainer checked={checkedCredit}>
+              <CreditCardIcon size={16} />
               <input
-                className="item1"
-                type="text"
-                placeholder="BI"
-                {...register("bi")}
+                type="checkbox"
+                name="credit"
+                id="credit"
+                checked={checkedCredit}
+                onChange={() => checkedPayment("credit")}
               />
+              <label htmlFor="credit">CARTÃO DE CRÉDITO</label>
+            </CheckboxContainer>
+            <CheckboxContainer checked={checkedDebit}>
+              <BankIcon size={16} />
               <input
-                className="item2"
-                type="text"
-                placeholder="Rua"
-                {...register("rua")}
+                type="checkbox"
+                name="debit"
+                id="debit"
+                checked={checkedDebit}
+                onChange={() => checkedPayment("debit")}
               />
+              <label htmlFor="debit">CARTÃO DE DÉBITO</label>
+            </CheckboxContainer>
+            <CheckboxContainer checked={checkedMoney}>
               <input
-                className="item3a"
-                type="text"
-                placeholder="Numero da casa"
-                {...register("Ncasa")}
+                type="checkbox"
+                name="money"
+                id="money"
+                checked={checkedMoney}
+                onChange={() => checkedPayment("money")}
               />
-              <input
-                className="item3b"
-                type="text"
-                placeholder="Complemento"
-                {...register("compl")}
-              />
-              <input
-                className="item4a"
-                type="text"
-                placeholder="Bairro"
-                {...register("bairro")}
-              />
-              <input
-                className="item4b"
-                type="text"
-                placeholder="cidade"
-                {...register("cidade")}
-              />
-              <input
-                className="item4c"
-                type="text"
-                placeholder="QT"
-                {...register("qt")}
-              />
-            </InputList>
-          </Location>
-          <Payment>
-            <TextContext>
-              <CurrencyDollarIcon size={22} color={defaultTheme.purple} />
-              <div>
-                <span>Pagamento</span>
-                <span>
-                  O pagamento e feito na Entrega, Escolha a forma que deseja
-                  pagar
-                </span>
-              </div>
-            </TextContext>
-            <TodoList>
-              <CheckboxContainer checked={checkedCredit}>
-                <HiddenCheckbox
-                  checked={checkedCredit}
-                  onChange={() => checkedPayment("credit")}
-                />
-                <CreditCardIcon size={16} />
-                <LabelText>CARTÃO DE CRÉDITO</LabelText>
-              </CheckboxContainer>
-              <CheckboxContainer checked={checkedDebit}>
-                <BankIcon size={16} />
-                <HiddenCheckbox
-                  checked={checkedDebit}
-                  onChange={() => checkedPayment("debit")}
-                />
-                <LabelText>CARTÃO DE DÉBITO</LabelText>
-              </CheckboxContainer>
-              <CheckboxContainer checked={checkedMoney}>
-                <MoneyIcon size={16} />
-                <HiddenCheckbox
-                  checked={checkedMoney}
-                  onChange={() => checkedPayment("money")}
-                />
-                <LabelText>DINHEIRO</LabelText>
-              </CheckboxContainer>
-            </TodoList>
-          </Payment>
+              <MoneyIcon size={16} />
+              <label htmlFor="money">DINHEIRO</label>
+            </CheckboxContainer>
+          </TodoList>
+        </Payment>
       </Request>
     </RequestContainer>
   );

@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const HomeContainer = styled.main`
-  border:1px solid red;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -29,5 +28,4 @@ export const CoffeeList = styled.div`
   justify-content: center;
   gap: 2.5rem;
   padding: 2.5rem;
-  border:1px solid blue;
 `;

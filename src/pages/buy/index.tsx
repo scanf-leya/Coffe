@@ -7,23 +7,23 @@ import { RequestForm } from "./components/requestForm";
 import { BuyCoffeHook } from "../../hook/buyCoffe";
 
 export function BuyCoffee() {
-  const { handleInformYourData,handleSubmit } = BuyCoffeHook();
+  const { handleInformYourData, handleSubmit } = BuyCoffeHook();
   return (
     <BuySection>
-        <form onSubmit={handleSubmit(handleInformYourData)} action="">
-          <RequestForm />
-          <CompletRequest>
-            <h2>Cafe selecionado</h2>
-            <CoffeeSell>
-              <CoffeeList>
-                {listCoffee.map((e, key) => (
-                  <CoffeeCardSell key={key} coffe={e} />
-                ))}
-              </CoffeeList>
-              <ConfirmRequest item={listCoffee} />
-            </CoffeeSell>
-          </CompletRequest>
-    </form>
-      </BuySection>
+      <form onSubmit={handleSubmit(handleInformYourData)} action="">
+        <RequestForm />
+        <CompletRequest>
+          <h2>Café selecionado</h2>
+          <CoffeeSell>
+            <CoffeeList>
+              {listCoffee.map((e, key) => (
+                <CoffeeCardSell key={key} coffe={e} />
+              ))}
+            </CoffeeList>
+            <ConfirmRequest item={listCoffee} />
+          </CoffeeSell>
+        </CompletRequest>
+      </form>
+    </BuySection>
   );
 }

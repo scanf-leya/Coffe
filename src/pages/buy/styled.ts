@@ -1,14 +1,16 @@
 import styled from "styled-components";
 
 export const BuySection = styled.main`
+  display: flex;
+  align-items: center;
+  justify-content: center;
   form {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    column-gap: 2rem;
-    padding-bottom: 5rem;
+    display: flex;
+    gap: 2rem;
   }
 
   input {
+    display: flex;
     flex: 1;
     gap: 0.25rem;
     padding: 0.75rem;
@@ -16,6 +18,13 @@ export const BuySection = styled.main`
     border-radius: 4px;
     background-color: ${(props) => props.theme["base-input"]};
   }
+
+  @media (max-width: 1163px) {
+    form {
+      flex-direction: column;
+    }
+  }
+  
 `;
 
 export const CompletRequest = styled.div`
@@ -29,8 +38,13 @@ export const CoffeeSell = styled.div`
   flex-direction: column;
   gap: 1.5rem;
   border-radius: 0.375rem 2.25rem;
-  padding: 2.5rem;
+  padding: 1.5rem;
   background-color: ${(props) => props.theme["base-card"]};
+
+  @media (max-width: 393px) {
+    background-color: transparent;
+    padding: 1rem;
+  }
 `;
 
 export const CoffeeList = styled.div`

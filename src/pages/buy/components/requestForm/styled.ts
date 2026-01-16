@@ -3,12 +3,15 @@ import styled from "styled-components";
 
 
 const Container = styled.div`
+  
   display: flex;
   flex-direction: column;
   padding: 2.5rem;
   gap: 2rem;
   background-color: ${(props) => props.theme["base-card"]};
   border-radius: 6px;
+  @media (max-width: 393px) {
+    background-color: transparent;}
 `;
 
 export const Location = styled(Container)``;
@@ -73,29 +76,52 @@ export const InputList = styled.div`
     grid-column: 3 / 4;
     width: 3.75rem;
   }
+ 
+   @media (max-width: 668px) {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+
+    .item1,
+    .item2,
+    .item3a,
+    .item3b,
+    .item4a,
+    .item4b,
+    .item4c {
+      width: 100%;
+    }
+  }
 `;
+
 export const Request = styled.div`
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
+  
 `;
 
 export const TodoList = styled.div`
   display: flex;
   align-items: center;
   gap:1rem;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: stretch;
+  }
 `;
 
 export const RequestContainer = styled.div`
   display: flex;
   flex-direction: column;
-  width: 40rem;
   gap: 0.9375rem;
 `;
 
 export const CheckboxContainer = styled.label<{ checked: boolean }>`
   display: flex;
   align-items: center;
+  justify-content: center;
   background: ${(props) => props.theme["base-button"]};
 
   border: 1px solid transparent;
@@ -118,16 +144,17 @@ export const CheckboxContainer = styled.label<{ checked: boolean }>`
   &:hover {
     background-color: ${(props) => props.theme["base-hover"]};
   }
+
+  input {
+    display: none;
+  }
+
+  label {
+    color: ${(props) => props.theme["base-text"]};
+    font-size: 0.75rem;
+    font-weight: 400;
+  }
 `;
 
-export const HiddenCheckbox = styled.input.attrs({ type: "checkbox" })`
-  display: none;
-`;
-
-export const LabelText = styled.span`
-  color: ${(props) => props.theme["base-text"]};
-  font-size: 0.75rem;
-  font-weight: 400;
-`;
 
 export const Payment = styled(Container)``;

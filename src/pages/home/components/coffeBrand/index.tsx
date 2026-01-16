@@ -8,7 +8,7 @@ export function CoffeeBrand() {
     <BrandSection>
       <TextContent>
         <div>
-          <h2>Encontre o cafe perfeito para qualquer hora do dia</h2>
+          <h2>Encontre o café perfeito para qualquer hora do dia</h2>
           <h3>
             Com o Coffee Delivery você recebe seu café onde estiver, a qualquer
             hora
