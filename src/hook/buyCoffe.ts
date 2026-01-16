@@ -1,6 +1,10 @@
 import { useState } from "react";
+import { useForm } from "react-hook-form";
 
 export function BuyCoffeHook() {
+
+  const { register, handleSubmit } = useForm();
+
   const [checkedCredit, setCheckedCredit] = useState(false);
   const [checkedDebit, setCheckedDebit] = useState(false);
   const [checkedMoney, setCheckedMoney] = useState(false);
@@ -20,5 +24,17 @@ export function BuyCoffeHook() {
       setCheckedMoney(true);
     }
   }
-  return { checkedCredit, checkedDebit, checkedMoney, checkedPayment };
+
+  function handleInformYourData() {
+    console.log();
+  }
+  return {
+    checkedCredit,
+    checkedDebit,
+    checkedMoney,
+    checkedPayment,
+    register,
+    handleSubmit,
+    handleInformYourData,
+  };
 }

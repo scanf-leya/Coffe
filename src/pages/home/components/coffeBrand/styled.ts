@@ -10,14 +10,22 @@ export const BrandSection = styled.section`
     width: 476px;
     height: 360px;
   }
+  @media (max-width: 1143px) {
+    flex-direction: column;
+    text-align: center;
+    img {
+      margin-top: 2rem;
+      width: 80%;
+      height: auto;
+    }
+  }
 `;
 
 export const TextContent = styled.div`
   display: flex;
   flex-direction: column;
   gap: 4.125rem;
-
-  max-width: 588px;
+  
 
   h2 {
     font-family: "Baloo 2", cursive;
@@ -31,6 +39,7 @@ export const TextContent = styled.div`
     font-weight: 400;
     color: ${(props) => props.theme["base-subtitle"]};
   }
+
 `;
 
 export const Benefits = styled.div`
@@ -38,6 +47,7 @@ export const Benefits = styled.div`
   grid-template-columns: 1fr 1fr;
   row-gap: 1.25rem;
   column-gap: 2.5rem;
+  justify-items: center;
   span {
     display: flex;
     align-items: center;

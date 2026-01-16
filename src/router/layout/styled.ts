@@ -3,16 +3,8 @@ import styled from "styled-components";
 export const LayoutRouterContainer = styled.div`
   display: flex;
   flex-direction: column;
-
-  padding: 2.5rem 10rem;
-  height: calc(100vh - 10rem);
-`;
-
-export const LayoutRouter = styled.main`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
+  padding: 1.5rem 10rem;
+  height: 100%;
   overflow-y: auto;
   overflow-x: hidden;
   height: calc(100vh - 90px);
@@ -26,4 +18,16 @@ export const LayoutRouter = styled.main`
   &::-webkit-scrollbar-track {
     background: transparent;
   }
+  border: 1px solid green;
+
+  @media (max-width: 1012px) {
+    padding: 1.5rem 2rem;
+  }
+`;
+
+export const LayoutRouter = styled.main`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
 `;

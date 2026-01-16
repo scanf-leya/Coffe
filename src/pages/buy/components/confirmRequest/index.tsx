@@ -7,7 +7,6 @@ interface CoffeRequest {
 }
 
 export function ConfirmRequest({ item }: { item: CoffeRequest[] }) {
-  console.log(item);
   const totalItems = Array.isArray(item)
     ? item.reduce((total, curr) => {
         const dataCoffe = coffees.find((coffee) => coffee.id === curr.id);
@@ -32,7 +31,7 @@ export function ConfirmRequest({ item }: { item: CoffeRequest[] }) {
       <h2>
         Total <span>R$ {totalPrice.toFixed(2)}</span>
       </h2>
-      <button>CONFIRMAR PEDIDO</button>
+      <button type="submit">CONFIRMAR PEDIDO</button>
     </ConfirmRequestContainer>
   );
 }

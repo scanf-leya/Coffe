@@ -45,7 +45,13 @@ export const HeaderContainer = styled.header`
       background: ${(props) => props.theme["yellow-light"]};
     }
   }
+
+  @media (max-width: 1012px) {
+    padding: 1.5rem 2rem;
+  }
+
 `;
+
 
 export const CartQuantity = styled.div`
   position: absolute;
