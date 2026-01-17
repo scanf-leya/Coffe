@@ -1,5 +1,5 @@
 import { CoffeeCardSell } from "./components/buyCoffee";
-import { BuySection, CompletRequest, CoffeeSell, CoffeeList } from "./styled";
+import { BuySection, CompletRequest, CoffeeSell, CoffeeList, CoffeeEmpty } from "./styled";
 
 import { ConfirmRequest } from "./components/confirmRequest";
 import { RequestForm } from "./components/requestForm";
@@ -17,9 +17,11 @@ export function BuyCoffee() {
           <h2>Café selecionado</h2>
           <CoffeeSell>
             <CoffeeList>
-              {listCoffee.map((e, key) => (
-                <CoffeeCardSell key={key} coffe={e} />
-              ))}
+              {
+                listCoffee.map((e) => (
+                  <CoffeeCardSell key={e.id} coffe={e} />
+                ))}
+              {listCoffee.length === 0 && <CoffeeEmpty>Nenhum café adicionado</CoffeeEmpty>}
             </CoffeeList>
             <ConfirmRequest item={listCoffee} />
           </CoffeeSell>

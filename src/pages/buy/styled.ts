@@ -63,3 +63,11 @@ export const CoffeeList = styled.div`
     border-radius: 8px;
   }
 `;
+
+export const CoffeeEmpty = styled.p`
+  width: 20.5rem;
+  color: ${(props) => props.theme["base-text"]};
+  font-size: 1rem;
+  font-weight: 400;
+  text-align: center;
+`;
