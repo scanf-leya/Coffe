@@ -1,13 +1,14 @@
 import { CoffeeCardSell } from "./components/buyCoffee";
 import { BuySection, CompletRequest, CoffeeSell, CoffeeList } from "./styled";
 
-import { listCoffee } from "../../const";
 import { ConfirmRequest } from "./components/confirmRequest";
 import { RequestForm } from "./components/requestForm";
 import { BuyCoffeHook } from "../../hook/buyCoffe";
+import { HomeHook } from "../../hook/home";
 
 export function BuyCoffee() {
   const { handleInformYourData, handleSubmit } = BuyCoffeHook();
+  const { listCoffee } = HomeHook();
   return (
     <BuySection>
       <form onSubmit={handleSubmit(handleInformYourData)} action="">

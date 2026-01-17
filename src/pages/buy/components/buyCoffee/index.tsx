@@ -9,26 +9,26 @@ import {
   Quantity,
   TextContent,
 } from "./styled";
+import { HomeHook } from "../../../../hook/home";
 import { coffees } from "../../../../const";
-import { useState } from "react";
 
-interface CoffeRequest{
-  quant: number,
-  id: number
+interface CoffeRequest {
+  quantity: number;
+  id: number;
 }
 
 export function CoffeeCardSell({ coffe }: { coffe: CoffeRequest }) {
+  const { Setquantify,remove}=HomeHook();
+  const dataCoffe = coffees.find((item) => item.id === coffe.id);
   
-  const dataCoffe = coffees.find((item) => item.id === coffe.id)
-  
-  const [quantity, setQuantity] = useState<number>(coffe.quant);
   const handleIncrease = () => {
-    setQuantity(quantity + 1);
+    Setquantify(coffe.id, "+");
   }
   const handleDecrease = () => {
-    if (quantity > 1) {
-      setQuantity(quantity - 1);
-    }
+      Setquantify(coffe.id, "-");
+  }
+  const handleRemove = () => {
+      remove(coffe.id);
   }
   return (
     <CoffeeCardContainer>
@@ -41,12 +41,12 @@ export function CoffeeCardSell({ coffe }: { coffe: CoffeRequest }) {
                 <ButtonCard onClick={handleDecrease}>
                   <MinusIcon size={14} />
                 </ButtonCard>
-                {quantity}
+                {coffe.quantity}
                 <ButtonCard onClick={handleIncrease}>
                   <PlusIcon size={14} />
                 </ButtonCard>
               </Quantity>
-              <ButtonRemove>
+              <ButtonRemove onClick={handleRemove}>
                 <TrashIcon size={16} />
                 <p>REMOVER</p>
               </ButtonRemove>

@@ -1,32 +1,28 @@
-import { useState } from "react";
+import { useHomeStore } from "./home.store";
 
 export function HomeHook() {
-  const [quantify, setQuantify] = useState(1);
-  const [count, setCount] = useState(0);
-  const [listCoffee, setListCoffee] = useState<{ id: number, quant: number }[]>([])
-  
-  function Add() {
-    setQuantify((prev) => prev + 1);
-  }
-  function Remove() {
-    if(quantify > 0) setQuantify((prev) => prev - 1)
-  }
-  
-  function handleAddToCart(id:number) {
-    const AddCoffee = {
-      id: id,
-      quant:quantify,
-    }
-    setListCoffee((state) => [...state, AddCoffee])
-    setQuantify(1)
-    setCount((prev) => prev + 1)
-    
-    console.log(AddCoffee )
-    console.log(listCoffee)
-    console.log(count)
+  const { cart, addToCart,getTotalItems,removeFromCart,setquantify,clearCart  } = useHomeStore();
+  const count = getTotalItems();
+  const listCoffee = cart;
+
+  function Setquantify(id: number, op: "+"|"-") {
+    setquantify(id, op);
   }
 
-    
-   return{ quantify,listCoffee,count,setCount, Add,Remove,handleAddToCart}
+  function handleAddToCart(id: number, quantity: number) {
+    addToCart(id, quantity);
+  }
 
+  function remove(id: number) {
+    removeFromCart(id);
+  }
+
+  return {
+    listCoffee,
+    count,
+    handleAddToCart,
+    remove,
+    Setquantify,
+    clearCart
+  };
 }

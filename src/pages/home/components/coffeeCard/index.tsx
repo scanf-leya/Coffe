@@ -11,6 +11,7 @@ import {
   TypesCoffee,
 } from "./styled";
 import { HomeHook } from "../../../../hook/home";
+import { useState } from "react";
 
 interface CoffeeProps {
   id: number;
@@ -23,10 +24,28 @@ interface CoffeeProps {
   description: string;
   price: string;
 }
-export function CoffeeCardCatalog({ coffee }: { coffee: CoffeeProps }) {
-  const {Add,Remove,handleAddToCart,quantify}=HomeHook()
 
-  function handle(){return handleAddToCart(coffee.id)}
+interface CoffeeCardProps {
+  coffee: CoffeeProps;
+  cart: ReturnType<typeof HomeHook>;
+}
+
+export function CoffeeCardCatalog({ coffee, cart }: CoffeeCardProps) {
+  const { handleAddToCart } = cart;
+  const [quantify, setQuantify] = useState(1);
+
+  function Add() {
+    setQuantify((prev) => prev + 1);
+  }
+
+  function Remove() {
+    setQuantify((prev) => (prev > 1 ? prev - 1 : 1));
+  }
+
+  function handle() {
+    handleAddToCart(coffee.id, quantify);
+    setQuantify(1);
+  }
 
   return (
     <CoffeeCardContainer>
@@ -46,15 +65,15 @@ export function CoffeeCardCatalog({ coffee }: { coffee: CoffeeProps }) {
         </PriceConteiner>
         <Quantity>
           <ButtonCard onClick={Remove}>
-            <MinusIcon size={14} />
+            <MinusIcon size={12} />
           </ButtonCard>
           {quantify}
           <ButtonCard onClick={Add}>
-            <PlusIcon size={14} />
+            <PlusIcon size={12} />
           </ButtonCard>
         </Quantity>
         <AddToCart onClick={handle}>
-          <ShoppingCartIcon size={24} weight="fill" />
+          <ShoppingCartIcon size={20} weight="fill" />
         </AddToCart>
       </ContainerPrice>
     </CoffeeCardContainer>

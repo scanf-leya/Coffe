@@ -25,7 +25,13 @@ export const CoffeeSection = styled.section`
 export const CoffeeList = styled.div`
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-start;
+  margin-top: 2.375rem;
+  margin-left: 1.5rem;
   gap: 2.5rem;
-  padding: 2.5rem;
+
+  @media (max-width: 1357px) {
+    justify-content: center;
+    margin-left: 0;
+  }
 `;

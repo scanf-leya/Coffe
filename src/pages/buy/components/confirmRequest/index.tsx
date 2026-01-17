@@ -2,7 +2,7 @@ import { coffees } from "../../../../const";
 import { ConfirmRequestContainer } from "./styled";
 
 interface CoffeRequest {
-  quant: number;
+  quantity: number;
   id: number;
 }
 
@@ -12,7 +12,7 @@ export function ConfirmRequest({ item }: { item: CoffeRequest[] }) {
         const dataCoffe = coffees.find((coffee) => coffee.id === curr.id);
 
         const price = Number(dataCoffe?.price) || 0;
-        const quant = Number(curr.quant) || 0;
+        const quant = Number(curr.quantity) || 0;
 
         return total + price * quant;
       }, 0)
