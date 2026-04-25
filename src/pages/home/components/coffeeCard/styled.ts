@@ -7,8 +7,9 @@ export const CoffeeCardContainer = styled.div`
 
   background-color: ${(props) => props.theme["base-card"]};
 
-  width: 14rem;
+  width: 16rem;
   border-radius: 0.375rem 2.25rem;
+  margin-bottom: 3.8rem;
 
   img {
     position: relative;

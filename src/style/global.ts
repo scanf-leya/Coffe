@@ -24,4 +24,8 @@ export const GlobalStyle = createGlobalStyle`
         
     }
 
+    .card {
+  
+}
+
 `;

@@ -25,10 +25,9 @@ export const CoffeeSection = styled.section`
 export const CoffeeList = styled.div`
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-start;
+  justify-content: space-around;
   margin-top: 2.375rem;
   margin-left: 1.5rem;
-  gap: 2.5rem;
 
   @media (max-width: 1357px) {
     justify-content: center;

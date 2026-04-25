@@ -1,4 +1,9 @@
-import { CoffeeIcon, PackageIcon, ShoppingCartIcon, TimerIcon } from "@phosphor-icons/react";
+import {
+  CoffeeIcon,
+  PackageIcon,
+  ShoppingCartIcon,
+  TimerIcon,
+} from "@phosphor-icons/react";
 import { defaultTheme } from "../../../../style/theme/default";
 import { BenefitItem, Benefits, BrandSection, TextContent } from "./styled";
 import { Assets } from "../../../../assets";
@@ -6,6 +11,12 @@ import { Assets } from "../../../../assets";
 export function CoffeeBrand() {
   return (
     <BrandSection>
+      <div className="bg-blur">
+        <div className="blob blob-yellow"></div>
+        <div className="blob blob-purple"></div>
+        <div className="blob blob-yellow-2"></div>
+        <div className="blob blob-purple-2"></div>
+      </div>
       <TextContent>
         <div>
           <h2>Encontre o café perfeito para qualquer hora do dia</h2>
